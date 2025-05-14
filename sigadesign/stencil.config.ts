@@ -8,16 +8,17 @@ export const config: Config = {
       type: 'dist', 
       esmLoaderPath: '../loader'
     },
-    vueOutputTarget({
-      componentCorePackage: 'your-lib',
-      proxiesFile: '../vue-wrappers/src/components.ts',
-      // optional: configure v-model proxies here
-    }),
     {
       type: 'dist-custom-elements',
       customElementsExportBehavior: 'auto-define-custom-elements',
-      externalRuntime: false,
+      externalRuntime: false
     },
+    vueOutputTarget({
+      componentCorePackage: 'sigadesign',
+      proxiesFile: '../vue-app/src/components/stencil-components.ts',
+      includeDefineCustomElements: true,
+      loaderDir: '../loader'    
+    }),
     {
       type: 'docs-readme',
     },
