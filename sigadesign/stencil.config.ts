@@ -1,12 +1,18 @@
 import { Config } from '@stencil/core';
+import { vueOutputTarget } from '@stencil/vue-output-target';
 
 export const config: Config = {
   namespace: 'sigadesign',
   outputTargets: [
-    {
-      type: 'dist',
-      esmLoaderPath: '../loader',
+    { 
+      type: 'dist', 
+      esmLoaderPath: '../loader'
     },
+    vueOutputTarget({
+      componentCorePackage: 'your-lib',
+      proxiesFile: '../vue-wrappers/src/components.ts',
+      // optional: configure v-model proxies here
+    }),
     {
       type: 'dist-custom-elements',
       customElementsExportBehavior: 'auto-define-custom-elements',
