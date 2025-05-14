@@ -1,6 +1,6 @@
 {
   "name": "sigadesign",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -36,7 +36,8 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate"
+    "generate": "stencil generate",
+    "bup": "npm version patch && npm run build && npm publish && git push"
   },
   "devDependencies": {
     "@stencil/core": "^4.27.1",
