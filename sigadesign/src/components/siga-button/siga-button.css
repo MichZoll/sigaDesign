@@ -83,11 +83,12 @@
 }
 
 .btn--icon-only {
-  padding: 8px;
   justify-content: center;
   align-items: center;
 }
 .btn--icon-only.btn--normal {
+  padding: 8px;
+  min-width: none;
   width: 40px;
   height: 40px;
 }
