@@ -1,4 +1,20 @@
-/* @import url('../../global/app.css'); */
+:host {
+  /* === Brand / Primary === */
+  --color-primary: #0091D4;
+  --color-primary-dark: #0070A4;
+  --color-primary-soft: #E5F4FA;
+  --color-primary-text: #0091D4;
+
+  /* === Neutral / Light === */
+  --color-white: #FFFFFF;
+  --color-grey-light: #E5EBEF;
+  --color-grey-hover: #CCD6DD;
+
+  /* === Dark === */
+  --color-dark: #1F2930;
+  --color-dark-hover: #4C6172;
+}
+
 
 .btn {
   display: inline-flex;
