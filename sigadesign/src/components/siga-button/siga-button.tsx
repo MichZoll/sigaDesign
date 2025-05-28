@@ -1,4 +1,4 @@
-import { Component, Prop, h, Host } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'siga-button',
@@ -22,6 +22,8 @@ export class SigaButton {
       'icon-only': this.iconOnly,
     };
 
+    const isSvgPath = this.icon && this.icon.endsWith('.svg');
+
     return (
       <button
         class={Object.keys(classList).filter(k => classList[k]).join(' ')}
@@ -29,7 +31,9 @@ export class SigaButton {
         aria-label={this.iconOnly && this.label ? this.label : undefined}
       >
         {this.icon && (
-          <span class="btn__icon" innerHTML={this.icon}></span>
+          isSvgPath
+            ? <img class="btn__icon" src={this.icon} alt="" />
+            : <span class="btn__icon" innerHTML={this.icon}></span>
         )}
         {!this.iconOnly && this.label}
       </button>
