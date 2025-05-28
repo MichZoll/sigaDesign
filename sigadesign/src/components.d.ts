@@ -22,6 +22,7 @@ export namespace Components {
     }
     interface SigaButton {
         "label": string;
+        "variant": 'white' | 'blue' | 'black';
     }
 }
 export interface SigaButtonCustomEvent<T> extends CustomEvent<T> {
@@ -75,6 +76,7 @@ declare namespace LocalJSX {
     interface SigaButton {
         "label"?: string;
         "onClicked"?: (event: SigaButtonCustomEvent<void>) => void;
+        "variant"?: 'white' | 'blue' | 'black';
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
