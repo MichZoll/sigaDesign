@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, Event, EventEmitter, h } from '@stencil/core';
 
 @Component({
   tag: 'siga-button',
@@ -7,8 +7,14 @@ import { Component, Prop, h } from '@stencil/core';
 })
 export class SigaButton {
   @Prop() label: string;
+  @Event() clicked: EventEmitter<void>;
+
+  private handleClick = () => {
+    console.log("button was clicked");
+    this.clicked.emit();
+  }
 
   render() {
-    return <button>{this.label}</button>;
+    return <button onClick={ this.handleClick }>{ this.label }</button>;
   }
 }
