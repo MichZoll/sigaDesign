@@ -21,13 +21,12 @@ export namespace Components {
         "middle": string;
     }
     interface SigaButton {
-        "label": string;
-        "variant": 'white' | 'blue' | 'black';
+        "disabled": boolean;
+        "icon"?: string;
+        "label"?: string;
+        "size": 'normal' | 'big';
+        "variant": 'blue' | 'white' | 'dark' | 'grey';
     }
-}
-export interface SigaButtonCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLSigaButtonElement;
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -36,18 +35,7 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
-    interface HTMLSigaButtonElementEventMap {
-        "clicked": void;
-    }
     interface HTMLSigaButtonElement extends Components.SigaButton, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLSigaButtonElementEventMap>(type: K, listener: (this: HTMLSigaButtonElement, ev: SigaButtonCustomEvent<HTMLSigaButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLSigaButtonElementEventMap>(type: K, listener: (this: HTMLSigaButtonElement, ev: SigaButtonCustomEvent<HTMLSigaButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLSigaButtonElement: {
         prototype: HTMLSigaButtonElement;
@@ -74,9 +62,11 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface SigaButton {
+        "disabled"?: boolean;
+        "icon"?: string;
         "label"?: string;
-        "onClicked"?: (event: SigaButtonCustomEvent<void>) => void;
-        "variant"?: 'white' | 'blue' | 'black';
+        "size"?: 'normal' | 'big';
+        "variant"?: 'blue' | 'white' | 'dark' | 'grey';
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
