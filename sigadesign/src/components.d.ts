@@ -5,6 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { BUTTON_SIZE, BUTTON_VARIANT } from "./components/siga-button/siga-button";
+export { BUTTON_SIZE, BUTTON_VARIANT } from "./components/siga-button/siga-button";
 export namespace Components {
     interface MyComponent {
         /**
@@ -24,8 +26,8 @@ export namespace Components {
         "disabled": boolean;
         "icon"?: string;
         "label"?: string;
-        "size": 'normal' | 'big';
-        "variant": 'blue' | 'white' | 'dark' | 'grey';
+        "size": BUTTON_SIZE;
+        "variant": BUTTON_VARIANT;
     }
 }
 declare global {
@@ -65,8 +67,8 @@ declare namespace LocalJSX {
         "disabled"?: boolean;
         "icon"?: string;
         "label"?: string;
-        "size"?: 'normal' | 'big';
-        "variant"?: 'blue' | 'white' | 'dark' | 'grey';
+        "size"?: BUTTON_SIZE;
+        "variant"?: BUTTON_VARIANT;
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
