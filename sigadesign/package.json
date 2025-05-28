@@ -1,7 +1,7 @@
 {
   "name": "sigadesign",
-  "version": "0.0.7",
-  "description": "Siga Component Starter",
+  "version": "0.0.8",
+  "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "types": "dist/types/index.d.ts",
