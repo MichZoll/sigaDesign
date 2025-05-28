@@ -1,8 +1,41 @@
-button {
-  background-color: #007bff;
-  color: white;
-  padding: 0.5em 1em;
+.btn {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5em 1.25em;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Blue background, white text */
+.btn.blue {
+  background-color: #007bff;
+  color: white;
+}
+
+/* White background, blue text */
+.btn.white {
+  background-color: white;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+/* Black background, white text */
+.btn.black {
+  background-color: black;
+  color: white;
+}
+
+/* Hovers because why not */
+.btn.blue:hover {
+  background-color: #0056b3;
+}
+
+.btn.white:hover {
+  background-color: #f0f0f0;
+}
+
+.btn.black:hover {
+  background-color: #222;
 }

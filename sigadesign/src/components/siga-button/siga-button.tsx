@@ -7,6 +7,7 @@ import { Component, Prop, Event, EventEmitter, h } from '@stencil/core';
 })
 export class SigaButton {
   @Prop() label: string;
+  @Prop() variant: 'white' | 'blue' | 'black' = 'blue';
   @Event() clicked: EventEmitter<void>;
 
   private handleClick = () => {
@@ -15,6 +16,12 @@ export class SigaButton {
   }
 
   render() {
-    return <button onClick={ this.handleClick }>{ this.label }</button>;
+    return (
+      <button 
+        class={`btn ${this.variant}`}
+        onClick={ this.handleClick }>
+          { this.label }
+      </button>
+    );
   }
 }
