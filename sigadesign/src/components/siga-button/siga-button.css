@@ -1,16 +1,16 @@
-/* Base button styles */
+/* === BASE BUTTON === */
 .btn {
   display: inline-flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 10px;
-
-  padding: 13px 15px 10px;
+  border: none;
   border-radius: 2px;
   cursor: pointer;
 
   font-family: 'Helvetica Neue LT Pro', sans-serif;
+  font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
@@ -59,15 +59,11 @@
   background: linear-gradient(90deg, #1f2930 0%, #4c6172 100%);
 }
 
-/* When icon and text both present, fix vertical alignment */
-.btn.icon-with-text .btn__icon {
-  line-height: 17px;
-}
-
-/* Variant blue (only one you have so far) */
-.btn--blue {
-  background-color: #0091D4;
-  color: #FFFFFF;
+/* === DISABLED STATE === */
+.btn--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* === ICON MODES === */

@@ -14,9 +14,6 @@ export class SigaButton {
   @Prop() iconMode: 'none' | 'yes' | 'only' = 'none';
 
   render() {
-    const hasText = !!this.label && !this.iconOnly;
-    const hasIcon = !!this.icon;
-
     const classList = {
       btn: true,
       [`btn--${this.variant}`]: true,
