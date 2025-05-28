@@ -1,41 +1,75 @@
+/* === BASE BUTTON === */
 .btn {
-  font-family: inherit;
-  font-size: 1rem;
-  padding: 0.5em 1.25em;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   border: none;
-  border-radius: 4px;
+  border-radius: 2px;
   cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease;
+
+  font-family: 'Helvetica Neue LT Pro', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.01em;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: inherit;
 }
 
-/* Blue background, white text */
-.btn.blue {
-  background-color: #007bff;
-  color: white;
+/* === VARIANT: BLUE === */
+.btn--blue {
+  background-color: #0091D4;
+  color: #FFFFFF;
 }
 
-/* White background, blue text */
-.btn.white {
-  background-color: white;
-  color: #007bff;
-  border: 1px solid #007bff;
+/* Hover state for blue */
+.btn--blue:hover:not(.btn--disabled) {
+  background: linear-gradient(90deg, #0091D4 0%, #0070A4 100%);
 }
 
-/* Black background, white text */
-.btn.black {
-  background-color: black;
-  color: white;
+/* === SIZES === */
+
+/* Normal size (text button default) */
+.btn--normal {
+  height: 40px;
+  padding: 13px 15px 10px;
+  min-width: 79px; /* from Figma text width */
 }
 
-/* Hovers because why not */
-.btn.blue:hover {
-  background-color: #0056b3;
+/* Big size */
+.btn--big {
+  height: 52px;
+  padding: 19px 21px 16px;
+  min-width: 79px;
 }
 
-.btn.white:hover {
-  background-color: #f0f0f0;
+/* Icon-only overrides for normal size */
+.btn--normal.icon-only {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  min-width: 40px;
+  justify-content: center;
 }
 
-.btn.black:hover {
-  background-color: #222;
+/* === ICON === */
+.btn__icon {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  fill: currentColor; /* inherit button text color */
+  flex-shrink: 0;
+}
+
+/* === DISABLED STATE === */
+.btn--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
 }

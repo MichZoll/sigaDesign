@@ -1,4 +1,4 @@
-import { Component, Prop, Event, EventEmitter, h } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'siga-button',
@@ -6,22 +6,29 @@ import { Component, Prop, Event, EventEmitter, h } from '@stencil/core';
   shadow: true,
 })
 export class SigaButton {
-  @Prop() label: string;
-  @Prop() variant: 'white' | 'blue' | 'black' = 'blue';
-  @Event() clicked: EventEmitter<void>;
-
-  private handleClick = () => {
-    console.log("button was clicked");
-    this.clicked.emit();
-  }
+  @Prop() variant: 'blue' | 'white' | 'dark' | 'grey' = 'blue';
+  @Prop() size: 'normal' | 'big' = 'normal';
+  @Prop() disabled: boolean = false;
+  @Prop() label?: string;
+  @Prop() icon?: string; // optional, SVG/icon path/class
 
   render() {
+    const classList = {
+      btn: true,
+      [`btn--${this.variant}`]: true,
+      [`btn--${this.size}`]: true,
+      'btn--disabled': this.disabled,
+    };
+
     return (
-      <button 
-        class={`btn ${this.variant}`}
-        onClick={ this.handleClick }>
-          { this.label }
+      <button
+        class={Object.keys(classList).filter(k => classList[k]).join(' ')}
+        disabled={this.disabled}
+      >
+        {this.icon && <span class="btn__icon">{/* insert icon here */}</span>}
+        {this.label}
       </button>
+
     );
   }
 }
