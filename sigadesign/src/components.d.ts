@@ -23,6 +23,7 @@ export namespace Components {
     interface SigaButton {
         "disabled": boolean;
         "icon"?: string;
+        "iconOnly": boolean;
         "label"?: string;
         "size": 'normal' | 'big';
         "variant": 'blue' | 'white' | 'dark' | 'grey';
@@ -64,6 +65,7 @@ declare namespace LocalJSX {
     interface SigaButton {
         "disabled"?: boolean;
         "icon"?: string;
+        "iconOnly"?: boolean;
         "label"?: string;
         "size"?: 'normal' | 'big';
         "variant"?: 'blue' | 'white' | 'dark' | 'grey';
