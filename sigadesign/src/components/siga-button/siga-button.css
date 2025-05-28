@@ -1,4 +1,5 @@
-/* === BASE BUTTON === */
+@import url('./theme.css');
+
 .btn {
   display: inline-flex;
   flex-direction: row;
@@ -20,8 +21,6 @@
   color: inherit;
 }
 
-
-
 /* === SIZES === */
 .btn--normal {
   height: 40px;
@@ -35,42 +34,38 @@
   min-width: 79px;
 }
 
-
-
 /* === VARIANTS === */
 .btn--blue {
-  background-color: #0091D4;
-  color: #ffffff;
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }
 .btn--blue:hover:not(.btn--disabled) {
-  background: linear-gradient(90deg, #0091d4 0%, #0070a4 100%);
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
 }
 
 .btn--grey {
-  background-color: #e5ebef;
-  color: #0091d4;
+  background-color: var(--color-grey-light);
+  color: var(--color-primary-text);
 }
 .btn--grey:hover:not(.btn--disabled) {
-  background: linear-gradient(90deg, #e5ebef -1.66%, #ccd6dd 100%);
+  background: linear-gradient(90deg, var(--color-grey-light) -1.66%, var(--color-grey-hover) 100%);
 }
 
 .btn--dark {
-  background-color: #1f2930;
-  color: #ffffff;
+  background-color: var(--color-dark);
+  color: var(--color-white);
 }
 .btn--dark:hover:not(.btn--disabled) {
-  background: linear-gradient(90deg, #1f2930 0%, #4c6172 100%);
+  background: linear-gradient(90deg, var(--color-dark) 0%, var(--color-dark-hover) 100%);
 }
 
 .btn--white {
-  background-color: #ffffff;
-  color: #0091D4;
+  background-color: var(--color-white);
+  color: var(--color-primary-text);
 }
 .btn--white:hover:not(.btn--disabled) {
-  background: linear-gradient(90deg, #FFFFFF 0%, #E5F4FA 98.02%);
+  background: linear-gradient(90deg, var(--color-white) 0%, var(--color-primary-soft) 98.02%);
 }
-
-
 
 /* === DISABLED STATE === */
 .btn--disabled {
@@ -79,10 +74,7 @@
   pointer-events: none;
 }
 
-
-
 /* === ICON MODES === */
-
 .btn--icon-yes .btn__icon {
   width: 24px;
   height: 24px;
@@ -98,12 +90,14 @@
   justify-content: center;
   align-items: center;
 }
+
 .btn--icon-only.btn--normal {
   padding: 8px;
   min-width: 0px;
   width: 40px;
   height: 40px;
 }
+
 .btn--icon-only.btn--big {
   width: 52px;
   height: 52px;
@@ -115,8 +109,6 @@
   height: 24px;
   fill: currentColor;
 }
-
-
 
 /* === LABEL === */
 .btn__label {
