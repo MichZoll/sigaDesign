@@ -1,7 +1,7 @@
 {
   "name": "sigadesign",
   "version": "0.0.7",
-  "description": "Stencil Component Starter",
+  "description": "Siga Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "types": "dist/types/index.d.ts",
@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/stenciljs/component-starter.git"
+    "url": "https://github.com/MichZoll/sigaDesign"
   },
   "files": [
     "dist/",
