@@ -1,43 +1,46 @@
-/* === BASE BUTTON === */
+/* Base button styles */
 .btn {
   display: inline-flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  border: none;
+
+  padding: 13px 15px 10px;
   border-radius: 2px;
   cursor: pointer;
 
   font-family: 'Helvetica Neue LT Pro', sans-serif;
-  font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 0.01em;
 
   transition: background-color 0.3s ease, color 0.3s ease;
-  color: inherit;
-}
-
-/* === VARIANT: BLUE === */
-.btn--blue {
+  color: #fff;
   background-color: #0091D4;
-  color: #FFFFFF;
+  border: none;
 }
 
-/* Hover state for blue */
-.btn--blue:hover:not(.btn--disabled) {
+/* Hover */
+.btn:hover:not(.btn--disabled) {
   background: linear-gradient(90deg, #0091D4 0%, #0070A4 100%);
 }
 
-/* === SIZES === */
+/* Disabled */
+.btn.btn--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
 
-/* Normal size (text button default) */
+/* Sizes */
+
+/* Normal size */
 .btn--normal {
   height: 40px;
   padding: 13px 15px 10px;
-  min-width: 79px; /* from Figma text width */
+  min-width: 79px;
 }
 
 /* Big size */
@@ -47,29 +50,33 @@
   min-width: 79px;
 }
 
-/* Icon-only overrides for normal size */
-.btn--normal.icon-only {
+/* Icon-only button */
+.btn.icon-only {
+  padding: 8px;
   width: 40px;
   height: 40px;
-  padding: 8px;
-  min-width: 40px;
   justify-content: center;
 }
 
-/* === ICON === */
+/* Icon styling */
 .btn__icon {
   width: 24px;
   height: 24px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  fill: currentColor; /* inherit button text color */
+  vertical-align: middle;
   flex-shrink: 0;
+  object-fit: contain; /* For img */
 }
 
-/* === DISABLED STATE === */
-.btn--disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  pointer-events: none;
+/* When icon and text both present, fix vertical alignment */
+.btn.icon-with-text .btn__icon {
+  line-height: 17px;
+}
+
+/* Variant blue (only one you have so far) */
+.btn--blue {
+  background-color: #0091D4;
+  color: #FFFFFF;
 }

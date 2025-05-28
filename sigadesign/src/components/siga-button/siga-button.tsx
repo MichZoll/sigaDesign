@@ -10,16 +10,20 @@ export class SigaButton {
   @Prop() size: 'normal' | 'big' = 'normal';
   @Prop() disabled: boolean = false;
   @Prop() label?: string;
-  @Prop() icon?: string; // icon can be a path, name, or inline SVG string
+  @Prop() icon?: string; // expects a URL to SVG file or inline SVG string
   @Prop() iconOnly: boolean = false;
 
   render() {
+    const hasText = !!this.label && !this.iconOnly;
+    const hasIcon = !!this.icon;
+
     const classList = {
       btn: true,
       [`btn--${this.variant}`]: true,
       [`btn--${this.size}`]: true,
       'btn--disabled': this.disabled,
       'icon-only': this.iconOnly,
+      'icon-with-text': hasText && hasIcon,
     };
 
     const isSvgPath = this.icon && this.icon.endsWith('.svg');
@@ -30,12 +34,13 @@ export class SigaButton {
         disabled={this.disabled}
         aria-label={this.iconOnly && this.label ? this.label : undefined}
       >
-        {this.icon && (
-          isSvgPath
-            ? <img class="btn__icon" src={this.icon} alt="" />
-            : <span class="btn__icon" innerHTML={this.icon}></span>
-        )}
-        {!this.iconOnly && this.label}
+        {hasIcon &&
+          (isSvgPath ? (
+            <img class="btn__icon" src={this.icon} alt="" />
+          ) : (
+            <span class="btn__icon" innerHTML={this.icon}></span>
+          ))}
+        {hasText && this.label}
       </button>
     );
   }
