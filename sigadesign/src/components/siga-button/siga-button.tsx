@@ -10,8 +10,8 @@ export class SigaButton {
   @Prop() size: 'normal' | 'big' = 'normal';
   @Prop() disabled: boolean = false;
   @Prop() label?: string;
-  @Prop() icon?: string; // icon can be a path, name, or inline SVG string
-  @Prop() iconOnly: boolean = false;
+  @Prop() icon?: string; // path to SVG or inline
+  @Prop() iconMode: 'none' | 'yes' | 'only' = 'none';
 
   render() {
     const classList = {
@@ -19,23 +19,20 @@ export class SigaButton {
       [`btn--${this.variant}`]: true,
       [`btn--${this.size}`]: true,
       'btn--disabled': this.disabled,
-      'icon-only': this.iconOnly,
+      [`btn--icon-${this.iconMode}`]: true,
     };
 
     const isSvgPath = this.icon && this.icon.endsWith('.svg');
 
     return (
-      <button
-        class={Object.keys(classList).filter(k => classList[k]).join(' ')}
-        disabled={this.disabled}
-        aria-label={this.iconOnly && this.label ? this.label : undefined}
-      >
-        {this.icon && (
-          isSvgPath
-            ? <img class="btn__icon" src={this.icon} alt="" />
-            : <span class="btn__icon" innerHTML={this.icon}></span>
-        )}
-        {!this.iconOnly && this.label}
+      <button class={Object.keys(classList).filter(k => classList[k]).join(' ')} disabled={this.disabled}>
+        {this.iconMode !== 'none' &&
+          (isSvgPath ? (
+            <img src={this.icon} class="btn__icon" alt="" />
+          ) : (
+            <span class="btn__icon" innerHTML={this.icon}></span>
+          ))}
+        {this.iconMode !== 'only' && this.label && <span class="btn__label">{this.label}</span>}
       </button>
     );
   }

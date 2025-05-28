@@ -16,55 +16,47 @@
   line-height: 17px;
   letter-spacing: 0.01em;
 
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
   color: inherit;
-}
-
-/* === VARIANT: BLUE === */
-.btn--blue {
-  background-color: #0091D4;
-  color: #FFFFFF;
-}
-
-/* Hover state for blue */
-.btn--blue:hover:not(.btn--disabled) {
-  background: linear-gradient(90deg, #0091D4 0%, #0070A4 100%);
+  background: transparent;
 }
 
 /* === SIZES === */
-
-/* Normal size (text button default) */
 .btn--normal {
   height: 40px;
   padding: 13px 15px 10px;
-  min-width: 79px; /* from Figma text width */
+  min-width: 79px;
 }
 
-/* Big size */
 .btn--big {
   height: 52px;
   padding: 19px 21px 16px;
   min-width: 79px;
 }
 
-/* Icon-only overrides for normal size */
-.btn--normal.icon-only {
-  width: 40px;
-  height: 40px;
-  padding: 8px;
-  min-width: 40px;
-  justify-content: center;
+/* === VARIANTS === */
+.btn--blue {
+  background-color: #0091D4;
+  color: #ffffff;
+}
+.btn--blue:hover:not(.btn--disabled) {
+  background: linear-gradient(90deg, #0091d4 0%, #0070a4 100%);
 }
 
-/* === ICON === */
-.btn__icon {
-  width: 24px;
-  height: 24px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  fill: currentColor; /* inherit button text color */
-  flex-shrink: 0;
+.btn--grey {
+  background-color: #e5ebef;
+  color: #0091d4;
+}
+.btn--grey:hover:not(.btn--disabled) {
+  background: linear-gradient(90deg, #e5ebef -1.66%, #ccd6dd 100%);
+}
+
+.btn--dark {
+  background-color: #1f2930;
+  color: #ffffff;
+}
+.btn--dark:hover:not(.btn--disabled) {
+  background: linear-gradient(90deg, #1f2930 0%, #4c6172 100%);
 }
 
 /* === DISABLED STATE === */
@@ -72,4 +64,47 @@
   opacity: 0.6;
   cursor: not-allowed;
   pointer-events: none;
+}
+
+/* === ICON MODES === */
+.btn--icon-none {
+  /* no extra rules needed */
+}
+
+.btn--icon-yes .btn__icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.btn--icon-only {
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+}
+.btn--icon-only.btn--normal {
+  width: 40px;
+  height: 40px;
+}
+.btn--icon-only.btn--big {
+  width: 52px;
+  height: 52px;
+  padding: 14px;
+}
+
+.btn--icon-only .btn__icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+/* === LABEL === */
+.btn__label {
+  display: inline-flex;
+  align-items: center;
 }
