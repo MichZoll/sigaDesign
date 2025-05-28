@@ -1,4 +1,4 @@
-@import url('./theme.css');
+@import url('../../styles/theme.css');
 
 .btn {
   display: inline-flex;
