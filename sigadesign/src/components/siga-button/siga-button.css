@@ -59,6 +59,16 @@
   background: linear-gradient(90deg, #1f2930 0%, #4c6172 100%);
 }
 
+.btn--white {
+  background-color: #ffffff;
+  color: #0091D4;
+}
+.btn--white:hover:not(.btn--disabled) {
+  background: linear-gradient(90deg, #FFFFFF 0%, #E5F4FA 98.02%);
+}
+
+
+
 /* === DISABLED STATE === */
 .btn--disabled {
   opacity: 0.6;
