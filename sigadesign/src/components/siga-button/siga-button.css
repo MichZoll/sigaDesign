@@ -20,6 +20,8 @@
   color: inherit;
 }
 
+
+
 /* === SIZES === */
 .btn--normal {
   height: 40px;
@@ -32,6 +34,8 @@
   padding: 19px 21px 16px;
   min-width: 79px;
 }
+
+
 
 /* === VARIANTS === */
 .btn--blue {
@@ -75,10 +79,9 @@
   pointer-events: none;
 }
 
+
+
 /* === ICON MODES === */
-.btn--icon-none {
-  /* no extra rules needed */
-}
 
 .btn--icon-yes .btn__icon {
   width: 24px;
@@ -112,6 +115,8 @@
   height: 24px;
   fill: currentColor;
 }
+
+
 
 /* === LABEL === */
 .btn__label {
