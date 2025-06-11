@@ -29,6 +29,12 @@ export namespace Components {
         "size": BUTTON_SIZE;
         "variant": BUTTON_VARIANT;
     }
+    interface SigaLogo {
+        "altText": string;
+        "height": string;
+        "variant": 'regular' | 'inverted';
+        "width": string;
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -43,9 +49,16 @@ declare global {
         prototype: HTMLSigaButtonElement;
         new (): HTMLSigaButtonElement;
     };
+    interface HTMLSigaLogoElement extends Components.SigaLogo, HTMLStencilElement {
+    }
+    var HTMLSigaLogoElement: {
+        prototype: HTMLSigaLogoElement;
+        new (): HTMLSigaLogoElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
         "siga-button": HTMLSigaButtonElement;
+        "siga-logo": HTMLSigaLogoElement;
     }
 }
 declare namespace LocalJSX {
@@ -70,9 +83,16 @@ declare namespace LocalJSX {
         "size"?: BUTTON_SIZE;
         "variant"?: BUTTON_VARIANT;
     }
+    interface SigaLogo {
+        "altText"?: string;
+        "height"?: string;
+        "variant"?: 'regular' | 'inverted';
+        "width"?: string;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
         "siga-button": SigaButton;
+        "siga-logo": SigaLogo;
     }
 }
 export { LocalJSX as JSX };
@@ -81,6 +101,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "siga-button": LocalJSX.SigaButton & JSXBase.HTMLAttributes<HTMLSigaButtonElement>;
+            "siga-logo": LocalJSX.SigaLogo & JSXBase.HTMLAttributes<HTMLSigaLogoElement>;
         }
     }
 }
