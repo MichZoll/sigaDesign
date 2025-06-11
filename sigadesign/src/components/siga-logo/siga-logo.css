@@ -1,0 +1,13 @@
+:host {
+  display: block;
+}
+
+.logo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.logo .background {
+  background-color: #0091D4;
+}

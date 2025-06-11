@@ -28,7 +28,7 @@ export class SigaButton {
   @Prop() size: BUTTON_SIZE;
   @Prop() disabled: boolean = false;
   @Prop() label?: string;
-  @Prop() icon?: string; // inline SVG string only
+  @Prop() icon?: string; // inline SVG string only. Potential vulnerability to Cross-Site Scripting (XSS)
 
   // runtime validation
   private static readonly allowedVariants = Object.values(BUTTON_VARIANT);
