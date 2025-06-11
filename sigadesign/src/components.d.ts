@@ -33,7 +33,6 @@ export namespace Components {
         "altText": string;
         "height": string;
         "variant": 'regular' | 'inverted';
-        "width": string;
     }
 }
 declare global {
@@ -87,7 +86,6 @@ declare namespace LocalJSX {
         "altText"?: string;
         "height"?: string;
         "variant"?: 'regular' | 'inverted';
-        "width"?: string;
     }
     interface IntrinsicElements {
         "my-component": MyComponent;

@@ -9,22 +9,17 @@ import logo_regular from '../../assets/siga-logo-blue.svg';
 })
 export class SigaLogo {
   @Prop() variant: 'regular' | 'inverted' = 'regular';
-  @Prop() width: string = 'auto';
-  @Prop() height: string = 'auto';
+  @Prop() height: string = '8mm';
   @Prop() altText: string = 'SIGA Logo';
 
   get logoSrc() {
     return this.variant == 'regular' ? logo_regular : logo_inverted;
   }
 
-  get backgroundColor() {
-    return this.variant === 'regular' ? 'transparent' : '#0091D4';
-  }
-
   get classList(): string {
     const classes = {
-      logo: true,
-      background: this.variant == 'inverted'
+      'logo-container': true,
+      'background': this.variant == 'inverted'
     };
 
     return Object.keys(classes).filter(k => classes[k]).join(' ');
@@ -32,9 +27,16 @@ export class SigaLogo {
 
   render() {
     return (
-      <div class={this.classList}>
-        <img src={this.logoSrc} alt={this.altText} />
-      </div>
+      <Host
+        style={{
+          '--logo-height': this.height
+        }}
+      >
+        <div class={this.classList}>
+          <img src={this.logoSrc} alt={this.altText} />
+        </div>
+      </Host>
+      
     );
   }
 }

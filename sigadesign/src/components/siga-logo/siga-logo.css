@@ -1,13 +1,20 @@
 :host {
   display: block;
+  --logo-height: auto;
 }
 
-.logo {
+.logo-container {
   display: block;
-  max-width: 100%;
-  height: auto;
+  padding: max(3mm, calc(var(--logo-height, 1em) * 0.75));
+  background-color: transparent;
 }
 
-.logo .background {
+.logo-container.background {
   background-color: #0091D4;
+}
+
+.logo-container img {
+  height: var(--logo-height);
+  width: auto;
+  min-height: 4mm;
 }
