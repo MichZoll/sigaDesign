@@ -32,7 +32,8 @@ export namespace Components {
     interface SigaLogo {
         "altText": string;
         "height": string;
-        "variant": 'regular' | 'inverted';
+        "orientation": 'vertical' | 'horizontal';
+        "variant": 'original' | 'white' | 'black';
     }
 }
 declare global {
@@ -85,7 +86,8 @@ declare namespace LocalJSX {
     interface SigaLogo {
         "altText"?: string;
         "height"?: string;
-        "variant"?: 'regular' | 'inverted';
+        "orientation"?: 'vertical' | 'horizontal';
+        "variant"?: 'original' | 'white' | 'black';
     }
     interface IntrinsicElements {
         "my-component": MyComponent;

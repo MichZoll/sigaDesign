@@ -1,11 +1,13 @@
 :host {
   display: block;
-  --logo-height: auto;
+  --logo-height-raw: auto;
+  --logo-height: max(4mm, var(--logo-height-raw, 4mm));
+  --logo-padding: calc(var(--logo-height) * 0.75);
 }
 
 .logo-container {
   display: block;
-  padding: max(3mm, calc(var(--logo-height, 1em) * 0.75));
+  padding: var(--logo-padding);
   background-color: transparent;
 }
 
@@ -13,8 +15,12 @@
   background-color: #0091D4;
 }
 
+.logo-container.vertical {
+  transform: rotate(-90deg);
+  transform-origin: top left;
+}
+
 .logo-container img {
   height: var(--logo-height);
   width: auto;
-  min-height: 4mm;
 }
