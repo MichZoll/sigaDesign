@@ -1,8 +1,10 @@
-import { Component, Host, Prop, getAssetPath, h } from '@stencil/core';
+import { Component, Host, Prop, h } from '@stencil/core';
+import logo_original from '../../assets/siga-logo-blue.svg';
+import logo_white from '../../assets/siga-logo-white.svg';
+import logo_black from '../../assets/siga-logo-black.svg';
 
 @Component({
   tag: 'siga-logo',
-  assetsDirs: ['assets'],
   styleUrl: 'siga-logo.css',
   shadow: true,
 })
@@ -13,18 +15,14 @@ export class SigaLogo {
   @Prop() orientation: 'vertical' | 'horizontal' = 'horizontal';
 
   get logoSrc() {
-    let image;
     switch(this.variant) {
       case 'white':
-        image = 'siga-logo-white.svg';
-        break;
+        return logo_white;
       case 'black':
-        image = 'siga-logo-black.svg';
-        break;
+        return logo_black;
       default:
-        image = 'siga-logo-blue.svg';
+        return logo_original;
     }
-    return getAssetPath(`./assets/${image}`)
   }
 
   get background() {
