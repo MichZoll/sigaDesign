@@ -1,23 +1,34 @@
 :host {
-  display: block;
+  --color-primary: #0091D4;
+
   --logo-height-raw: auto;
   --logo-height: max(4mm, var(--logo-height-raw, 4mm));
+  --logo-width: calc(var(--logo-height) * 4.18);
   --logo-padding: calc(var(--logo-height) * 0.75);
 }
 
+.logo-container.vertical {
+  display: inline-block;
+  height: var(--logo-width);
+  width: var(--logo-height);
+  padding: var(--logo-padding);
+  background-color: transparent;
+}
+
 .logo-container {
-  display: block;
+  display: inline-block;
   padding: var(--logo-padding);
   background-color: transparent;
 }
 
 .logo-container.background {
-  background-color: #0091D4;
+  background-color: var(--color-primary);
 }
 
-.logo-container.vertical {
-  transform: rotate(-90deg);
-  transform-origin: top left;
+.logo-container.vertical img {
+  transform: rotate(-90deg) translateY(calc((-1) * (var(--logo-width))));
+  transform-origin: top right;
+  margin-right: 0;
 }
 
 .logo-container img {
