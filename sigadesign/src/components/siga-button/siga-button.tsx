@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Listen, Prop, h } from '@stencil/core';
 
 export enum BUTTON_VARIANT {
   BLUE = 'blue',
@@ -30,6 +30,14 @@ export class SigaButton {
   @Prop() label?: string;
   @Prop() icon?: string; // inline SVG string only. Potential vulnerability to Cross-Site Scripting (XSS)
 
+  @Listen('click', { capture: true })
+  blockClickWhenDisabled(ev: Event) {
+    if (this.disabled) {
+      ev.stopImmediatePropagation();
+      ev.preventDefault();
+    }
+  }
+  
   // runtime validation
   private static readonly allowedVariants = Object.values(BUTTON_VARIANT);
   private static readonly allowedSizes = Object.values(BUTTON_SIZE);
@@ -54,6 +62,8 @@ export class SigaButton {
     }
     return ICON_MODE.NONE;
   }
+
+
 
   get classList(): string {
     const classes = {
