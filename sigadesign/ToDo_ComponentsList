@@ -1,0 +1,66 @@
+Um eine neue Komponente dem Backlog hinzuzufügen, trage bitte folgendes in diesem .txt ein:
+
+- Erfassername
+- Komponentenname
+- Attribute (inklusive kuzer Beschreibung)
+- Bausteine (falls noch nicht vorhanden)
+- Usecase / Beispiel
+
+Ressourcen:
+- Figma UI Kit:   https://www.figma.com/design/ak1HYr5DFtDyP13c7C2Xqr/SIGA-Ui-Kit?node-id=22-175&t=XEiEIljORPYTp0K6-0
+- Figma Checkout: https://www.figma.com/design/2TxieLjIclxcLCMEAeKEWG/Checkout--Schnell-Checkout-?node-id=11-3806&p=f&t=CiXEFNiJGM0yzAeT-0
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+TEXT
+
+- Erfassername: Berno
+- Komponentenname: siga_text
+- Attribute: size (small, medium, large), color (primary, secondary), curve (p1, ..., p4, h1, ..., h4)
+- Bausteine: -
+- Usecase / Beispiel: 
+    - siga_text bildet einen wichtigen Grundbaustein für weitere Komponenten in der Zukunft. 
+    - text in neuen Komponenten sollte über siga_text integriert werden, damit styles auch Zukünftig korrekt übernommen werden.
+    - Beispiel der Stadt Zürich: https://designsystem.stadt-zuerich.ch/current/?path=/story/components-text--default&args=curve:lead
+
+
+-------------------------------------------------------------------------------------------
+
+ICON
+
+- Erfassername: Berno
+- Komponentenname: siga_icon
+- Attribute: name (identifier, string mit fallback "broken")
+- Bausteine: -
+- Usecase / Beispiele:
+    - siga_icon sollte eine Suite von siga-standarticons direct per id ansteuern.
+    - info, wahrenkorb, merkliste, stift, dropdown pfeil
+    - Beispiel der Stadt Zürich: https://designsystem.stadt-zuerich.ch/current/?path=/story/components-icon--default
+
+
+-------------------------------------------------------------------------------------------
+
+BUTTON
+
+- Erfassername: Berno
+- Komponentenname: siga_button
+- Attribute: same as before
+- Bausteine: neu: siga_text, siga_icon
+- useCase / Beispiele:
+    - icons über slot passen anstelle von wie gehabt.
+    - text durch siga_text ersetzen.
+    - Beispiel der Stadt Zürich: https://designsystem.stadt-zuerich.ch/current/?path=/story/components-button--default
+
+
+-------------------------------------------------------------------------------------------
+
+PRICE
+
+- Erfassername: Berno
+- Komponentenname: siga_price
+- Attribute: Value (number), Region (ISO), currencySign (boolean), size?, color?, curve?
+- Bausteine: siga_text
+- useCase / Beispiele:
+    - konvertiert das Format eines Geldbetrags in eine regionale Währung
+
