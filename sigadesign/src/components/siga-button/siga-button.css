@@ -25,6 +25,7 @@
   border: none;
   border-radius: 2px;
   cursor: pointer;
+  width: 100%;
 
   font-family: 'HelveticaNeueLTProB', sans-serif;
   font-style: normal;
